@@ -194,6 +194,4 @@ import View from './view.class.js';
     }
   });
   console.log(view);
-  setTimeout(function(){ view.map.changeBaseMap("satellite"); }, 3000);
-  setTimeout(function(){ view.map.changeBaseMap("street"); }, 4000);
 })(window);
