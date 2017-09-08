@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <!--build:css css/styles.min.css-->
   <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css" type="text/css" />
   <link href="css/styles.css" rel="stylesheet" />
   <!--endbuild-->
@@ -30,14 +30,56 @@
   		<li><a href="#">Contact</a></li>
   	</ul>
   </nav>
-
+  <header>
+    <article class="city-name">
+      <h1>City of Detroit</h1>
+    </article>
+    <article class="search">
+      <img src="img/search.png" alt="search">
+    </article>
+  </header>
   <main>
-    <header>
-      <article class="menu-button button">
-
+    <section class="top-hero-container">
+      <article class="top-hero">
+        <h1><span>Welcome to</span><br>DETROIT.GOV</h1>
       </article>
-    </header>
+    </section>
+    <section class="government-status">
+      <h2>FRIDAY, SEPTEMBER 8</h2>
+      <article class="service">
+        <article class="icon">
+          <img src="img/building.png" alt="Building Hours">
+        </article>
+        <article class="description">
+          <p>CITY BUILDINGS</p>
+          <p>All city buildings are operating at normal hours.</p>
+        </article>
+      </article>
+      <article class="service">
+        <article class="icon">
+          <img src="img/parking-meter.png" alt="Parking meter">
+        </article>
+        <article class="description">
+          <p>PARKING METER</p>
+          <p>All city parking meters are currently working.</p>
+        </article>
+      </article>
+      <article class="service">
+        <article class="icon">
+          <img src="img/rubbish-bin.png" alt="Waste pick up">
+        </article>
+        <article class="description">
+          <p>TRASH & RECYCLING</p>
+          <p>All city waste pick up services are behind due to holidays.</p>
+        </article>
+      </article>
+    </section>
+    <section class="your-detroit">
+      <h2>YOUR DETROIT</h2>
+      <article id="geocoder"></article>
+    </section>
   </main>
   <script src="js/app.main.js"></script>
+  
 </body>
 </html>

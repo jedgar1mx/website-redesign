@@ -1,9 +1,12 @@
 'use strict';
 import mapboxgl from 'mapbox-gl';
-
+var MapboxGeocoder = require('mapbox-gl-geocoder');
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2x1c2Fyc2tpZGRldHJvaXRtaSIsImEiOiJjaXZsNXlwcXQwYnY5MnlsYml4NTJ2Mno4In0.8wKUnlMPIlxq-eWH0d10-Q';
 export default class Map {
   constructor(init) {
+    this.geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken
+    });
     this.prevState = null;
     this.currentState = {
       baseMap: init.baseLayers.street,
@@ -29,6 +32,9 @@ export default class Map {
       southwest: init.boundaries.sw,
       northeast: init.boundaries.ne,
     };
+    this.map.on('load',()=>{
+      document.getElementById('geocoder').appendChild(this.geocoder.onAdd(this.map))
+    });
     this.map.on('style.load',()=>{
       this.loadMap();
     });

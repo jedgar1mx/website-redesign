@@ -1,23 +1,7 @@
 'use strict';
-import Router from './router.class.js';
-import Template from './template.class.js';
-import View from './view.class.js';
+import Map from './map.class.js';
 (function(){
-  var router = new Router();
-  router.updateURLParams({'zoom':13,'lng':-83.15,'lat': 42.36});
-  var currentRouting = router.loadURLRouting();
-  console.log(router);
-  console.log(currentRouting);
-  var template = new Template();
-  console.log(template.generateTemplate({
-    title: "TITLE",
-    mainTitle : "Main title",
-    mainData  : 225,
-    subTitle : "Sub title",
-    subData  : null
-  }));
-  var view = new View({
-    map: {
+  var map = new Map({
       styleURL: 'mapbox://styles/slusarskiddetroitmi',
       mapContainer: 'map',
       baseLayers: {
@@ -191,7 +175,6 @@ import View from './view.class.js';
            "filter": ["==", "parcelno", ""]
          }
       ]
-    }
-  });
-  console.log(view);
+    });
+  console.log(map);
 })(window);
